@@ -80,7 +80,7 @@ Debuguing session :
 		2. Configuration.h
 		3. Configuration_adv.h
 
-	- plateformeio.ini	
+	 - plateformeio.ini :
 	
 	[platformio]
 	default_envs = LPC1768
