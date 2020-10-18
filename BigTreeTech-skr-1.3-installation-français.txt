@@ -1,0 +1,151 @@
+
+ - Utilisation de la carte BigTreeTech SKR 1.3 avec Windows 10
+ -------------------------------------------------------------
+
+	Date de création : 18 octobre 2020
+	Mise à jour	 :
+
+ - Avant toutes choses :
+
+	Session de débogage :
+		=> La carte est nue. (pas de pilotes, de fin de course, de cavalier - RIEN_²)
+		=> La carte est posé sur une surface isolante et on se décharge électriquement.
+		=> On vérifie bien la position du cavalier d'alimentation.
+
+		--------------	
+		IMPORTANT_² :
+		--------------
+		Seul le cavalier concernant l'alimentation doit être sur la carte et correctement positionné sur [5v + USB].
+		Seul le lecteur de carte [ONBOARD] peut servir à la mise à jour du firmware.
+		Toutes les micro SDHC carte ne fonctionnent pas forcement pour la mise à jour du firmware.
+
+			|-> La mienne est une Verbatim micro SDHC Class 4 8GB
+			|-> https://static.rapidonline.com/catalogueimages/product/49/36/s49-3634p01wl.jpg
+
+ ---------------------------------------------------------------------------------------------------------------------------
+
+
+	Connecter la carte sur le PC...
+	Ouvrir le gestionnaire de périphériques et vérifié :
+
+		1. Disk drives
+		Marlin SDCard 01 USB Device
+
+		2. Port (COM & LPT)
+		Marlin USB Serial (COM4)
+
+		Si le driver Marlin n'est pas utilisé :
+
+			Clic droit sur le port COM4
+			Update driver
+			Browse my computer for drivers
+			Let me pick from a list...
+			Choisir => Marlin USB Serial
+
+		vitesse du port == #define BAUDRATE dans Configuration.h
+
+			Clic droit sur le port COM4
+			Properties
+			Port Settings
+			Bits per second : 115200
+			
+
+ ---------------------------------------------------------------------------------------------------------------------------
+
+ - Ensuite, il faut savoir si #define SDCARD_CONNECTION [LCD - ONBOARD - CUSTOM_CABLE]
+   est activé ou pas.
+
+	1. Si activé : Le lecteur de carte de la SKR 1.3 n'apparaitra pas dans l'explorateur de Windows 10.
+	2. Si désactivé : Le lecteur de carte de la SKR 1.3 apparaitra dans l'explorateur de Windows 10.
+
+	Si "SDCARD_CONNECTION ONBOARD" est activé, il faut détacher la SD carte via l'interface de gestion de l'imprimante (pronterface,pronsole,octoprint...)
+	afin que l'explorateur de Windows 10 puisse prendre la relève.
+
+		Commande : M20 (List SD Card) M21 (Init SD Card) M22 (Release SD Card)
+
+	Une fois détaché et si il y a une SD carte dans le lecteur, correctement partitionnée* et formatée*, alors on peut accèder à ce périphérique.
+
+	* Partitionnement et formatage
+
+	A. Partitionnement => 1ère partition de moins de 32GB
+	B. Formatage => FAT16 ou FAT32 - Label == REARM
+	C. Créer un fichier "FIRMWARE.CUR" sur cette partition.
+	D. Vérifier que le fichier "FIRMWARE.CUR" a bien l'extension ".CUR" (explorateur Windows 10 => View - File name extensions doit être cochée)
+
+ ---------------------------------------------------------------------------------------------------------------------------
+
+ - Télécharger Marlin-bugfix-2.0 et le décompresser.
+ - Télécharger Visual Studio Code et installer l'extension "PlateformIO IDE".
+
+	Dans VSCode, ouvrir un dossier (Marlin-bugfix-2.0) et éditer les 3 fichiers suivants :
+
+		1. plateformeio.ini
+		2. Configuration.h
+		3. Configuration_adv.h
+
+	1. plateformeio.ini
+
+	[platformio]
+	[...]
+	default_envs = LPC1768
+	[...]
+
+	[env:LPC1768]
+	[...]
+	upload_port = COM4
+	upload_speed = 115200
+
+	2. Configuration.h
+
+	#define SERIAL_PORT -1
+	#define SERIAL_PORT_2 0
+	#define BAUDRATE 115200
+	#define MOTHERBOARD BOARD_BTT_SKR_V1_3
+	#define SDSUPPORT
+
+	3. Configuration_adv.h
+
+	#define SD_DETECT_STATE HIGH
+	//#define SDCARD_CONNECTION ONBOARD (TEST)
+
+	ou bien
+	#define SDCARD_CONNECTION ONBOARD (PRODUCTION)
+
+ - Enregistrer toutes les modifications.
+
+ ---------------------------------------------------------------------------------------------------------------------------
+
+	Vérifier que la SD carte est bien présente dans l'explorateur de Windows 10.
+	Dans VSCode, cliquer sur l'icône "Alien" dans le panneau à gauche.
+
+	- Build All => (5 minutes environ)
+		upload disk:  E:
+		Building .pio\build\LPC1768\firmware.bin
+		SUCCESS
+
+	- Upload All => (5 secondes environ)
+		Looking for upload disk...
+		Use manually specified: E:
+		Uploading .pio\build\LPC1768\firmware.bin
+		Firmware has been successfully uploaded.
+		(Some boards may require manual hard reset)
+
+ - Réinitialisation de la carte :
+
+	Vérifier que sur le disque E: les 2 fichiers "FIRMWARE.CUR" et "firmware.bin" sont bien présent
+	Appuyer brièvement sur le bouton reset de la carte. (sentir le clic)
+	Windows 10 joue un son pour notifier qu'il a bien détecter la carte.
+	Ouvrir le disque E: dans l'explorateur de Windows 10.
+
+		1. Le ficher "firmware.bin" a disparu
+		2. Le fichier "FIRMWARE.CUR" est mis à jour (date et heure modifiées)
+
+ NB :
+ ---------------------------------------------------------------------------------------------------------------------------
+	- Afficher les extensions de fichiers.
+	- Afficher les disques vides.
+	- La lettre identifiant le disque peut-être différente.
+	- Acitver les sons de windows 10.
+	- Seul le lecteur de carte [ONBOARD] peut servir à la mise à jour du firmware.
+
+		
