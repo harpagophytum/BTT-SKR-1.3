@@ -83,6 +83,7 @@ Debuguing session :
 	- plateformeio.ini	
 	
 	[platformio]
+	default_envs = LPC1768
 	
 	[env:LPC1768]
 
