@@ -53,8 +53,8 @@ Debuguing session :
 
  - Then we have to know if #define SDCARD_CONNECTION [LCD - ONBOARD - CUSTOM_CABLE] is activated or not.
 
-	1. Enabled : The card reader of the SKR 1.3 will not appear in Windows 10 Explorer.
-	2. Disabled : The card reader of the SKR 1.3 will appear in Windows 10 Explorer.
+	- Enabled : The card reader of the SKR 1.3 will not appear in Windows 10 Explorer.
+	- Disabled : The card reader of the SKR 1.3 will appear in Windows 10 Explorer.
 
 	If "SDCARD_CONNECTION ONBOARD" is enabled, we must detach the SD card via the printer management interface (pronterface,pronsole,octoprint...)
 	so that Windows 10 Explorer can take over.
