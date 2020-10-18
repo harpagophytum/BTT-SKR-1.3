@@ -1,8 +1,5 @@
 # BTT-SKR-1.3
 
- - How to use the card BigTreeTeck SKR 1.3
- 
-	- English and french version
+  - English and french version
 
- - Use with Microsoft Windows 10
- - Use with raspbian Lite + Octoprint
+ - How to use the card BigTreeTech SKR 1.3 with Microsoft Windows 10 to update the firmware.
