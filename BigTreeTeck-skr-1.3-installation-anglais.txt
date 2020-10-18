@@ -1,5 +1,5 @@
 
- - How to use the card BigTreeTeck SKR 1.3 with Windows 10
+ - How to use the board BigTreeTeck SKR 1.3 with Windows 10
  ---------------------------------------------------------
 
 	Creation date : 18 octobre 2020
