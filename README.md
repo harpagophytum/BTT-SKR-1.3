@@ -80,7 +80,7 @@ Debuguing session :
 		2. Configuration.h
 		3. Configuration_adv.h
 
-	1. plateformeio.ini
+	- plateformeio.ini
 
 	[platformio]
 	[...]
@@ -92,7 +92,7 @@ Debuguing session :
 	upload_port = COM4
 	upload_speed = 115200
 
-	2. Configuration.h
+	- Configuration.h
 
 	#define SERIAL_PORT -1
 	#define SERIAL_PORT_2 0
@@ -100,7 +100,7 @@ Debuguing session :
 	#define MOTHERBOARD BOARD_BTT_SKR_V1_3
 	#define SDSUPPORT
 
-	3. Configuration_adv.h
+	- Configuration_adv.h
 
 	#define SD_DETECT_STATE HIGH
 	//#define SDCARD_CONNECTION ONBOARD (TEST)
