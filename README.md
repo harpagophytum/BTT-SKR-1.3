@@ -6,8 +6,8 @@
 
 First Header
 -------------
-Content Cell
-Content Cell
+Content Cell |
+Content Cell |
 
     [French](https://github.com/harpagophytum/BTT-SKR-1.3/blob/main/BigTreeTech-skr-1.3-installation-fran%C3%A7ais.txt)
     [English](https://github.com/harpagophytum/BTT-SKR-1.3/blob/main/BigTreeTech-skr-1.3-installation-anglais.txt)
