@@ -7,7 +7,9 @@
 
 Debuguing session :
 
-	- board with nothing. (no drivers, no endstop, no jumper - NOTHING_²)=> the board is placed on an insulating surface and we discharge ourselves electrically.=> Check the position of the power supply jumper.
+	- Board with nothing. (no drivers, no endstop, no jumper - NOTHING_²)
+	- The board is placed on an insulating surface and we discharge ourselves electrically.
+	- Check the position of the power supply jumper.
 
 		-------------
 		IMPORTANT_² :
