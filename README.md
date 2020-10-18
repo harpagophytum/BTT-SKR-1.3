@@ -1,5 +1,4 @@
 # BTT-SKR-1.3
-Markup :  # Heading 1 #
 
   - English and french version
 
