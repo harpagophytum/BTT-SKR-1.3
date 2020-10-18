@@ -80,29 +80,9 @@ Debuguing session :
 		2. Configuration.h
 		3. Configuration_adv.h
 
-	- plateformeio.ini
+	- plateformeio.ini	
 	
-	default_envs = LPC1768
-
-	env:LPC1768
-	upload_port = COM4
-	upload_speed = 115200
-
-	- Configuration.h
-
-	#define SERIAL_PORT -1
-	#define SERIAL_PORT_2 0
-	#define BAUDRATE 115200
-	#define MOTHERBOARD BOARD_BTT_SKR_V1_3
-	#define SDSUPPORT
-
-	- Configuration_adv.h
-
-	#define SD_DETECT_STATE HIGH
-	//#define SDCARD_CONNECTION ONBOARD (TEST)
-
-	or
-	#define SDCARD_CONNECTION ONBOARD (PRODUCTION)		
+	[platformio]
 
  - Save all changes.
 
