@@ -62,7 +62,7 @@
 
 		Command : M20 (List SD Card) M21 (Init SD Card) M22 (Release SD Card)
 
-	Once detached and if there is an SDHC card in the reader, properly partitioned and formatted*, then we can access this device.
+	Once detached and if there is an SDHC card in the reader, properly partitioned* and formatted*, then we can access this device.
 
 	* Partitioning and formatting
 
