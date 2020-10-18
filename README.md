@@ -81,14 +81,10 @@ Debuguing session :
 		3. Configuration_adv.h
 
 	- plateformeio.ini
-
-	[platformio]
-	[...]
+	
 	default_envs = LPC1768
-	[...]
 
-	[env:LPC1768]
-	[...]
+	env:LPC1768
 	upload_port = COM4
 	upload_speed = 115200
 
