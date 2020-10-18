@@ -1,11 +1,7 @@
 # BTT-SKR-1.3
-Utilisation de la carte SKR en version 1.3
 
  - How to use the card BigTreeTeck SKR 1.3 with Windows 10
  ---------------------------------------------------------
-
-	Creation date : 18 octobre 2020
-	Update :
 
  - Before all things :
 
