@@ -1,6 +1,6 @@
 
  - How to use the board BigTreeTech SKR 1.3 with Windows 10
- ---------------------------------------------------------
+ -----------------------------------------------------------
 
 	Creation date : 18 octobre 2020
 	Update :
