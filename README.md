@@ -6,5 +6,5 @@
 
 Version          | Repositories
 -------------    | -----------
-French version   | https://github.com/harpagophytum/BTT-SKR-1.3/blob/main/BigTreeTech-skr-1.3-installation-fran%C3%A7ais.txt
+French version   | [BTT SKR 1.3 - Installation sur Microsoft Windows 10](https://github.com/harpagophytum/BTT-SKR-1.3/blob/main/BigTreeTech-skr-1.3-installation-fran%C3%A7ais.txt)
 English version  | https://github.com/harpagophytum/BTT-SKR-1.3/blob/main/BigTreeTech-skr-1.3-installation-anglais.txt
