@@ -142,7 +142,7 @@
  ---------------------------------------------------------------------------------------------------------------------------
 	- Show file extensions.
 	- Show empty disks.
-	- The letter identifying the drive may be different
+	- The letter identifying the drive may be different.
 	- activate windows 10 sounds.
 	- Only the card reader [ONBOARD] can be used for firmware update.
 
